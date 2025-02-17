@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", serif;
+}
+
+.header{
+    background: #476EF7;
+    color: white;
+    padding-left: 30px;
+    font-size: x-large;
+}
+
+
+.input-form {
+    display: flex;
+    align-items: center;           
+    justify-content: space-around;  
+    width: 95%;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #476EF7;
+    margin-top: 20px;
+    padding: 15px 10px;
+  }
+  
+  .inputs {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .form-floating,
+  .form-control,
+  .form-select {
+    height: 57px;
+  }
+  
+  #add-button {
+    background: #476EF7;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: x-large;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+  }
+
+  #add-button:hover {
+    background: white;
+    color: #476EF7;
+    border: 2px solid #476EF7;
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .container-card{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  .container-card .card {
+    border: 0;
+    background: #476EF7;
+    height: 150px;
+    width: 18rem;
+  }
+  
+  .transaction-table {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #476EF7;
+  }
+
+  #header-row {
+    background-color: #476EF7;
+  }
+
+  #header-row th{
+    padding: 15px 10px;
+  }
+
+.delete-button{
+    background-color: red;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Comfortaa", serif;
+    }
+    .header{
+        background: #476EF7;
+        color: white;
+        padding-left: 30px;
+        font-size: x-large;
+    }  
+
+    .input-form {
+        flex-direction: column;
+        align-items: stretch;
+        width: 95%;
+        height: 310px;
+        padding: 20px;
+        box-shadow: 0px 0px 4px #476EF7;
+    }
+
+    .inputs {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #add-button {
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: x-large;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 150px;
+      }
+
+      .container-card{
+        display: flex;
+        width: 95%;
+        margin: auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .container-card .card {
+        border: 0;
+        background: #476EF7;
+        height: 130px;
+        width: 170px;
+      }
+
+}
+
+
+
