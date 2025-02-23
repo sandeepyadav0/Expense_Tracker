@@ -4,6 +4,7 @@ let table = document.getElementById('table');
 function deleteRow(row){
     row.remove();
 }
+
 function addRow(){
     let date = document.getElementsByClassName('dateInput')[0].value;
     let amount = document.getElementsByClassName('amountInput')[0].value;
@@ -39,4 +40,20 @@ function addRow(){
     deleteCell.classList.add('delete-button');
     deleteCell.onclick=()=> deleteRow(row);
     row.appendChild(binCell);
+
+
+    let totalIncome = document.getElementById('totalincome').innerText
+    let totalExpense = document.getElementById('totalexpense').innerText
+    let totalBalance = document.getElementById('balance').innerText;
+
+
+    if( transaction == 'Income'){
+        if(totalIncome == '0'){
+            document.getElementById('totalincome').innerText = amount;
+        }else {
+            document.getElementById('totalincome').innerText=parseInt(totalIncome)+parseInt(amount)
+        }
+    }
+    
 }
+
