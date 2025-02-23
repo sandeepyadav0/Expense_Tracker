@@ -1,4 +1,3 @@
-
 let table = document.getElementById('table');
 
 function deleteRow(row){
@@ -18,7 +17,7 @@ function addRow(){
 
     let transactionCell = document.createElement('td');
     transactionCell.innerText = transaction;
-    row.appendChild(transactionCell)
+    row.appendChild(transactionCell);
 
     let dateCell = document.createElement('td');
     dateCell.innerText = date;
@@ -26,10 +25,7 @@ function addRow(){
 
     table.appendChild(row);
 
-
     let binCell = document.createElement('td');
-
-
     let deleteCell = document.createElement('button');
     let binImage = document.createElement('img');
     binImage.style.width = '35px';
@@ -38,22 +34,38 @@ function addRow(){
     deleteCell.appendChild(binImage);
     binCell.appendChild(deleteCell);
     deleteCell.classList.add('delete-button');
-    deleteCell.onclick=()=> deleteRow(row);
+    deleteCell.onclick = () => deleteRow(row);
     row.appendChild(binCell);
 
-
-    let totalIncome = document.getElementById('totalincome').innerText
-    let totalExpense = document.getElementById('totalexpense').innerText
+    let totalIncome = document.getElementById('totalincome').innerText;
+    let totalExpense = document.getElementById('totalexpense').innerText;
     let totalBalance = document.getElementById('balance').innerText;
 
-
-    if( transaction == 'Income'){
+    if(transaction == 'Income'){
+        // Update total income
         if(totalIncome == '0'){
             document.getElementById('totalincome').innerText = amount;
-        }else {
-            document.getElementById('totalincome').innerText=parseInt(totalIncome)+parseInt(amount)
+        } else {
+            document.getElementById('totalincome').innerText = parseInt(totalIncome) + parseInt(amount);
+        }
+        // Update balance by adding income
+        if(totalBalance == '0'){
+            document.getElementById('balance').innerText = amount;
+        } else {
+            document.getElementById('balance').innerText = parseInt(totalBalance) + parseInt(amount);
+        }
+    } else if(transaction == 'Expense'){
+        // Update total expense
+        if(totalExpense == '0'){
+            document.getElementById('totalexpense').innerText = amount;
+        } else {
+            document.getElementById('totalexpense').innerText = parseInt(totalExpense) + parseInt(amount);
+        }
+        // Update balance by subtracting expense
+        if(totalBalance == '0'){
+            document.getElementById('balance').innerText = -parseInt(amount);
+        } else {
+            document.getElementById('balance').innerText = parseInt(totalBalance) - parseInt(amount);
         }
     }
-    
 }
-
