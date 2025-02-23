@@ -1,14 +1,20 @@
-let table = document.getElementById('table');
+
 
 function deleteRow(row){
     row.remove();
 }
-
 function addRow(){
     let date = document.getElementsByClassName('dateInput')[0].value;
     let amount = document.getElementsByClassName('amountInput')[0].value;
     let transaction = document.getElementsByClassName('transactionInput')[0].value;
 
+    // Check if any input is empty
+    if(date.trim() === "" || amount.trim() === "" || transaction.trim() === ""){
+        alert("Please fill in all fields before adding.");
+        return; // Stop executing the rest of the function
+    }
+
+    // Proceed with adding the row if all fields are filled
     let row = document.createElement('tr');
 
     let amountCell = document.createElement('td');
@@ -42,26 +48,22 @@ function addRow(){
     let totalBalance = document.getElementById('balance').innerText;
 
     if(transaction == 'Income'){
-        // Update total income
         if(totalIncome == '0'){
             document.getElementById('totalincome').innerText = amount;
         } else {
             document.getElementById('totalincome').innerText = parseInt(totalIncome) + parseInt(amount);
         }
-        // Update balance by adding income
         if(totalBalance == '0'){
             document.getElementById('balance').innerText = amount;
         } else {
             document.getElementById('balance').innerText = parseInt(totalBalance) + parseInt(amount);
         }
     } else if(transaction == 'Expense'){
-        // Update total expense
         if(totalExpense == '0'){
             document.getElementById('totalexpense').innerText = amount;
         } else {
             document.getElementById('totalexpense').innerText = parseInt(totalExpense) + parseInt(amount);
         }
-        // Update balance by subtracting expense
         if(totalBalance == '0'){
             document.getElementById('balance').innerText = -parseInt(amount);
         } else {
